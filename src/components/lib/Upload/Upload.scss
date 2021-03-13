@@ -1,0 +1,40 @@
+.upload {
+  display: flex;
+  width: 118px;
+  height: 120px;
+  padding: 34px 33px;
+  background: #f3f3f3;
+  border-radius: 3px;
+  position: relative;
+  justify-content: center;
+  div {
+    position: relative;
+    margin-left: -2px;
+    .image_upload_inner_icon_style {
+      &:first-child {
+        background: #c5c6cd;
+        border-radius: 8px;
+        width: 6px;
+        height: 52px;
+        position: absolute;
+      }
+      &:last-child {
+        background: #c5c6cd;
+        border-radius: 8px;
+        width: 6px;
+        height: 52px;
+        transform: rotate(90deg);
+        position: absolute;
+      }
+    }
+  }
+}
+
+.image_upload_input {
+  display: none;
+}
+
+.image_upload_name {
+  font-size: 12px;
+  margin-left: 30px;
+}

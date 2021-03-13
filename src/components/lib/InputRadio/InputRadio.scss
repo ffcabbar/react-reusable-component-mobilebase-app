@@ -1,0 +1,34 @@
+.radio_button {
+  background-color: #f8f8f8;
+  color: #111321;
+  width: 327px;
+  height: 45px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+
+  input[type="radio"] {
+    margin: 0;
+    margin-left: 8px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    outline: 0;
+    background-clip: content-box;
+    border: 1px solid #c5c6cd;
+    background-color: #fff;
+    border-radius: 50%;
+
+    &:checked {
+      padding: 3px;
+      background-color: #2cb34f;
+      transition: all 0.2s cubic-bezier(0.64, 0.57, 0.67, 2.53);
+    }
+  }
+  span {
+    font-size: 14px;
+    margin-left: 8px;
+  }
+}
