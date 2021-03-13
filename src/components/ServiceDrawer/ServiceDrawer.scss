@@ -1,0 +1,25 @@
+.service_drawer_wrapper {
+  padding: 24px;
+
+  .service_drawer {
+    width: 327px;
+    height: 384px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background: #fff;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 22px;
+
+    div {
+      height: 32px;
+      display: flex;
+      align-items: center;
+      padding-left: 16px;
+      cursor: pointer;
+    }
+
+    .service_drawer_header {
+      background: #f8f8f8;
+    }
+  }
+}
