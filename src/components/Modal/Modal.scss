@@ -22,7 +22,7 @@
   transition: opacity 300ms, transform 300ms;
 }
 
-.modal-content {
+.modal_content {
   height: 100%;
   width: 100%;
   background-color: #fff;
@@ -30,25 +30,25 @@
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 100%;
 }
-.modal-header {
+.modal_header {
   height: 43px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0px 14px;
 }
-.modal-footer {
+.modal_footer {
   padding: 8px 16px;
   display: flex;
   justify-content: center;
 }
-.modal-title {
+.modal_title {
   font-weight: bold;
   font-size: 12px;
   line-height: 18px;
   color: #111321;
 }
-.modal-body {
+.modal_body {
   border-top: 1px solid #eee;
   overflow: auto;
 }

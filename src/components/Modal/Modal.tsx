@@ -2,8 +2,8 @@ import React from "react";
 import { CSSTransition } from "react-transition-group";
 import DiscountRate from "../DiscountRate/DiscountRate";
 import Button from "../lib/Button/Button";
+import MultiStepForm from "../MultiStepForm/MultiStepForm";
 import PriceRange from "../PriceRange/PriceRange";
-import QuestionLabel from "../QuestionLabel/QuestionLabel";
 import "./Modal.scss";
 
 interface IModalProps {
@@ -23,8 +23,8 @@ const Modal: React.FC<IModalProps> = (props: IModalProps) => {
       onExited={() => props.setShowDrawer(true)}
     >
       <div className="modal" onClick={props.onClose}>
-        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-          <div className="modal-header">
+        <div className="modal_content" onClick={(e) => e.stopPropagation()}>
+          <div className="modal_header">
             <div>
               <svg
                 width="10"
@@ -41,7 +41,7 @@ const Modal: React.FC<IModalProps> = (props: IModalProps) => {
                 />
               </svg>
             </div>
-            <div className="modal-title">{props.title}</div>
+            <div className="modal_title">{props.title}</div>
             <div onClick={props.onClose}>
               <svg
                 width="12"
@@ -59,12 +59,12 @@ const Modal: React.FC<IModalProps> = (props: IModalProps) => {
               </svg>
             </div>
           </div>
-          <div className="modal-body">
+          <div className="modal_body">
             <PriceRange />
             <DiscountRate />
-            <QuestionLabel />
+            <MultiStepForm />
           </div>
-          <div className="modal-footer">
+          <div className="modal_footer">
             <Button>DEVAM</Button>
           </div>
         </div>
