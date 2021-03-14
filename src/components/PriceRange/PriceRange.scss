@@ -1,0 +1,26 @@
+.price_range {
+  height: 51px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 24px;
+  box-shadow: 0px 1px 4px #e4e4e4, 0px 1px 2px #e4e4e4, 0px 0px 2px #e4e4e4;
+  background: #fff;
+
+  div {
+    &:first-child {
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 16px;
+    }
+    &:last-child {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 16px;
+
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+}
