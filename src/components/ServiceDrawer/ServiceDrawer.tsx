@@ -6,6 +6,9 @@ import Modal from "../Modal/Modal";
 
 const ServiceDrawer: React.FC = () => {
   const [service, setService] = useState<IService[]>([]);
+  const [sendServiceData, setSendServiceData] = useState<IService>(
+    {} as IService
+  );
   const [showDrawer, setShowDrawer] = useState<boolean>(true);
   const [showModal, setShowModal] = useState<boolean>(false);
 
@@ -14,17 +17,22 @@ const ServiceDrawer: React.FC = () => {
   };
 
   useEffect(() => {
+    // Imagine like get api request from service
     getService();
   }, []);
 
-  console.log(service);
+  const handleServiceDrawer = (data: IService) => {
+    setSendServiceData(data);
+    setShowModal(true);
+  };
+
   return (
     <>
       <Modal
-        title="My Modal"
         onClose={() => setShowModal(false)}
         showModal={showModal}
         setShowDrawer={setShowDrawer}
+        serviceData={sendServiceData}
       />
 
       {showDrawer && (
@@ -36,7 +44,7 @@ const ServiceDrawer: React.FC = () => {
                 <div
                   key={item.serviceId}
                   className="service_drawer_item"
-                  onClick={() => setShowModal(true)}
+                  onClick={() => handleServiceDrawer(item)}
                 >
                   {item.name}
                 </div>

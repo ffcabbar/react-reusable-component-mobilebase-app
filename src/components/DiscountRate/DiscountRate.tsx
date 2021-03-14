@@ -1,16 +1,14 @@
 import React from "react";
 import "./DiscountRate.scss";
 
-interface IDiscountRateProps {}
+interface IDiscountRateProps {
+  discountRateText: string;
+}
 
 const DiscountRate: React.FC<IDiscountRateProps> = (
   props: IDiscountRateProps
 ) => {
-  return (
-    <div className="discount_rate">
-      Bu hizmet Şubat ayında <span>%17</span> indirimli!
-    </div>
-  );
+  return <div className="discount_rate">{props.discountRateText}</div>;
 };
 
 export default DiscountRate;
