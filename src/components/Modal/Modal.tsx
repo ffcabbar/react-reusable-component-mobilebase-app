@@ -72,7 +72,10 @@ const Modal: React.FC<IModalProps> = (props: IModalProps) => {
                   />
                 )}
 
-                <MultiStepForm formStep={formStep} />
+                <MultiStepForm
+                  serviceId={props.serviceData.serviceId}
+                  formStep={formStep}
+                />
               </div>
               <div className="modal_footer">
                 <Button onClick={() => setFormStep(formStep + 1)}>DEVAM</Button>
