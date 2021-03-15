@@ -10,4 +10,6 @@ export interface IQuestion {
   values: IQuestionValues[] | null;
   placeHolder: string | null;
   description: string | null;
+  unit?: null;
+  order?: number;
 }

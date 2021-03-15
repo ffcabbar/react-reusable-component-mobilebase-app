@@ -28,6 +28,7 @@ const MultiStepForm: React.FC<IMultiStepFormProps> = (
 
   useEffect(() => {
     getQuestions();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   console.log(questions, "qusetion");
