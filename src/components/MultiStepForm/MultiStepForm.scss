@@ -1,1 +1,13 @@
-.multi_step_form {}
+.multi_step_form {
+  .question_label {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: #111321;
+  }
+}

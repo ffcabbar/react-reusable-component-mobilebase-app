@@ -6,6 +6,11 @@ interface IInputRadioWithImageProps {
   height?: string | number;
   children?: React.ReactNode;
   onClick?: React.MouseEventHandler<HTMLElement>;
+  src?: string;
+  name?: string;
+  value?: string;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  checked?: boolean;
 }
 
 const InputRadioWithImage: React.FC<IInputRadioWithImageProps> = (
@@ -19,12 +24,18 @@ const InputRadioWithImage: React.FC<IInputRadioWithImageProps> = (
     >
       <div>
         <div>
-          <img alt="example" src="https://picsum.photos/id/237/200/300" />
+          <img alt={`${props?.src}_alt`} src={props?.src} />
         </div>
       </div>
       <div>
-        <input type="radio" name="radiowithimage" />
-        <span>{props.children}</span>
+        <input
+          type="radio"
+          name={props.name}
+          value={props.children?.toString()}
+          defaultChecked={props.checked}
+          onClick={props.onClick}
+        />
+        <span>{props?.children}</span>
       </div>
     </label>
   );

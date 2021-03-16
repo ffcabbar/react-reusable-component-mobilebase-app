@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { IService } from "../../interfaces/service/service";
 import DiscountRate from "../DiscountRate/DiscountRate";
@@ -16,7 +16,12 @@ interface IModalProps {
 }
 
 const Modal: React.FC<IModalProps> = (props: IModalProps) => {
-  const [formStep, setFormStep] = useState<number>(0);
+  const [formStep, setFormStep] = useState<number>(1);
+
+  useEffect(() => {
+    setFormStep(1);
+  }, [props.serviceData?.serviceId]);
+
   return (
     <>
       {props.serviceData && (
@@ -30,7 +35,12 @@ const Modal: React.FC<IModalProps> = (props: IModalProps) => {
           <div className="modal" onClick={props.onClose}>
             <div className="modal_content" onClick={(e) => e.stopPropagation()}>
               <div className="modal_header">
-                <div>
+                <div
+                  className={
+                    formStep === 1 ? "modal_header_back_button" : undefined
+                  }
+                  onClick={() => setFormStep(formStep - 1)}
+                >
                   <svg
                     width="10"
                     height="16"
@@ -78,7 +88,13 @@ const Modal: React.FC<IModalProps> = (props: IModalProps) => {
                 />
               </div>
               <div className="modal_footer">
-                <Button onClick={() => setFormStep(formStep + 1)}>DEVAM</Button>
+                {formStep === 3 ? (
+                  <Button>TALEP GÖNDER</Button>
+                ) : (
+                  <Button onClick={() => setFormStep(formStep + 1)}>
+                    DEVAM
+                  </Button>
+                )}
               </div>
             </div>
           </div>
