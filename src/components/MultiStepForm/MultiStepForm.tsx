@@ -62,9 +62,9 @@ const MultiStepForm: React.FC<IMultiStepFormProps> = (
             <div key={question.id}>
               <div className="question_label">{question.label}</div>
               {
-                <section>
+                <section className="question_section">
                   {
-                    <div>
+                    <div className="question_type_5_wrapper">
                       {question.typeId === 5 &&
                         question.values?.map((item) => {
                           return (
@@ -83,7 +83,7 @@ const MultiStepForm: React.FC<IMultiStepFormProps> = (
                     </div>
                   }
                   {question.pageNumber === 2 ? (
-                    <div>
+                    <div className="question_type_6_wrapper">
                       {question.typeId === 6 &&
                         question.values?.map((item) => {
                           return (
@@ -100,7 +100,7 @@ const MultiStepForm: React.FC<IMultiStepFormProps> = (
                         })}
                     </div>
                   ) : (
-                    <div>
+                    <div className="question_type_6_wrapper">
                       {question.typeId === 6 &&
                         question.values?.map((item) => {
                           return (
@@ -118,7 +118,7 @@ const MultiStepForm: React.FC<IMultiStepFormProps> = (
                     </div>
                   )}
                   {
-                    <div>
+                    <div className="question_type_8_wrapper">
                       {question.typeId === 8 && (
                         <Textarea
                           key={question.id}

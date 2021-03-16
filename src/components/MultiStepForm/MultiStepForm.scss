@@ -10,4 +10,23 @@
     line-height: 22px;
     color: #111321;
   }
+  .question_section {
+    .question_type_5_wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    .question_type_6_wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+    .question_type_8_wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
 }
