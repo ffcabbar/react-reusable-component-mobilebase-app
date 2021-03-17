@@ -1,12 +1,17 @@
-import React from "react";
-import ServiceDrawer from "./components/ServiceDrawer/ServiceDrawer";
-import "./style/App.scss";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import HomePage from "./components/HomePage";
+import SuccessPage from "./components/SuccessPage/SuccessPage";
 
 function App() {
   return (
-    <div className="app_wrapper">
-      <ServiceDrawer />
-    </div>
+    <>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/successpage" component={SuccessPage} />
+        </Switch>
+      </Router>
+    </>
   );
 }
 

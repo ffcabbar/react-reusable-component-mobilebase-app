@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import { IService } from "../../interfaces/service/service";
 import DiscountRate from "../DiscountRate/DiscountRate";
@@ -89,7 +90,14 @@ const Modal: React.FC<IModalProps> = (props: IModalProps) => {
               </div>
               <div className="modal_footer">
                 {formStep === 3 ? (
-                  <Button>TALEP GÖNDER</Button>
+                  <Button>
+                    <Link
+                      to="/successpage"
+                      style={{ textDecoration: "none", color: "#fff" }}
+                    >
+                      TALEP GÖNDER
+                    </Link>
+                  </Button>
                 ) : (
                   <Button onClick={() => setFormStep(formStep + 1)}>
                     DEVAM
