@@ -10,6 +10,7 @@ import { IQuestion } from "../../interfaces/questions/question";
 interface IMultiStepFormProps {
   formStep: number;
   serviceId: number;
+  setFormStep: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const MultiStepForm: React.FC<IMultiStepFormProps> = (
@@ -41,6 +42,13 @@ const MultiStepForm: React.FC<IMultiStepFormProps> = (
     getQuestions();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.formStep]);
+
+  useEffect(() => {
+    if((form.text || form.radio || form.radiowithimage || form.radio2) === "") {
+      props.setFormStep(1);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const updateForm = (e: any) => {
     if (e.target.value !== "" && e.target.value !== undefined) {

@@ -123,6 +123,7 @@ const Modal: React.FC<IModalProps> = (props: IModalProps) => {
                 <MultiStepForm
                   serviceId={props.serviceData.serviceId}
                   formStep={formStep}
+                  setFormStep={setFormStep}
                 />
               </div>
               <div className="modal_footer">
