@@ -1,5 +1,5 @@
 # Demo
-You can try => [Demo](https://react-mobile-case.netlify.app/)
+Deployed on netlify => [Demo](https://react-mobile-case.netlify.app/)
 
 **Clone the repository:**
 
