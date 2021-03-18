@@ -18,6 +18,7 @@ interface IModalProps {
 
 const Modal: React.FC<IModalProps> = (props: IModalProps) => {
   const [formStep, setFormStep] = useState<number>(1);
+  const nodeRef = React.useRef(null);
 
   useEffect(() => {
     setFormStep(1);
@@ -56,8 +57,9 @@ const Modal: React.FC<IModalProps> = (props: IModalProps) => {
           timeout={{ enter: 0, exit: 300 }}
           onEnter={() => props.setShowDrawer(false)}
           onExited={() => props.setShowDrawer(true)}
+          nodeRef={nodeRef}
         >
-          <div className="modal" onClick={props.onClose}>
+          <div className="modal" onClick={props.onClose} ref={nodeRef}>
             <div className="modal_content" onClick={(e) => e.stopPropagation()}>
               <div className="modal_header">
                 <div

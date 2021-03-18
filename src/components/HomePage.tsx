@@ -1,6 +1,6 @@
 import React from "react";
 import ServiceDrawer from "./ServiceDrawer/ServiceDrawer";
-import "../style/HomePage.scss";
+import "./HomePage.scss";
 
 interface IHomePageProps {}
 
