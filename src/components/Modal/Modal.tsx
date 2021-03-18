@@ -23,6 +23,30 @@ const Modal: React.FC<IModalProps> = (props: IModalProps) => {
     setFormStep(1);
   }, [props.serviceData?.serviceId]);
 
+  const modalTitle = (val: string | undefined) => {
+    if (val) {
+      if (formStep === 1) {
+        return val;
+      } else if (formStep === 2) {
+        return "%75 TAMAMLANDI";
+      } else if (formStep === 3) {
+        return "%100 TAMAMLANDI";
+      }
+    } else {
+      return "";
+    }
+  };
+
+  const progressBar = () => {
+    if (formStep === 1) {
+      return "33%";
+    } else if (formStep === 2) {
+      return "66%";
+    } else if (formStep === 3) {
+      return "100%";
+    }
+  };
+
   return (
     <>
       {props.serviceData && (
@@ -57,7 +81,9 @@ const Modal: React.FC<IModalProps> = (props: IModalProps) => {
                     />
                   </svg>
                 </div>
-                <div className="modal_title">{props.serviceData.name}</div>
+                <div className="modal_title">
+                  {modalTitle(props?.serviceData?.name)}
+                </div>
                 <div onClick={props.onClose}>
                   <svg
                     width="12"
@@ -76,6 +102,15 @@ const Modal: React.FC<IModalProps> = (props: IModalProps) => {
                 </div>
               </div>
               <div className="modal_body">
+                <div
+                  style={{
+                    background: "#2CB34F",
+                    height: "3px",
+                    borderRadius: "1.5px",
+                    width: progressBar(),
+                    position: "fixed",
+                  }}
+                />
                 <PriceRange price={props.serviceData.price} />
                 {props.serviceData.discountRateText && (
                   <DiscountRate
